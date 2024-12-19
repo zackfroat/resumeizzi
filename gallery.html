@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Gallery</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background:black;
+            background-size: cover;
+            color: white;
+            overflow: hidden;
+        }
+        
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #0f0;
+            text-align: center;
+            padding: 1rem 0;
+            border-bottom: 2px solid #0f0;
+        }
+
+        .gallery-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 80vh; /* Reduced height to leave space for footer */
+            overflow-y: auto;
+        }
+
+        .carousel {
+            perspective: 1000px;
+            width: 100%;
+            max-width: 600px;
+            position: relative;
+        }
+
+        .carousel-track {
+            display: flex;
+            gap: 10px;
+            transform-style: preserve-3d;
+            transform: rotateY(0);
+            animation: rotate 20s infinite linear;
+        }
+
+        .carousel-item {
+            width: 150px;
+            height: 225px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid green;
+            border-radius: 10px;
+            box-shadow: 0 0 20px green;
+            overflow: hidden;
+            transform-origin: center;
+            transform: rotateY(calc(var(--index) * 45deg)) translateZ(300px);
+            position: absolute;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotateY(0deg);
+            }
+            to {
+                transform: rotateY(360deg);
+            }
+        }
+
+        .carousel-item:nth-child(1) { --index: 0; }
+        .carousel-item:nth-child(2) { --index: 1; }
+        .carousel-item:nth-child(3) { --index: 2; }
+        .carousel-item:nth-child(4) { --index: 3; }
+        .carousel-item:nth-child(5) { --index: 4; }
+        .carousel-item:nth-child(6) { --index: 5; }
+        .carousel-item:nth-child(7) { --index: 6; }
+        .carousel-item:nth-child(8) { --index: 7; }
+
+        .menu {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        .menu button {
+            background: rgba(0, 0, 0, 0.8);
+            color: #0f0;
+            border: 2px solid #0f0;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .menu-content {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #0f0;
+            border-radius: 8px;
+            box-shadow: 0 0 15px #0f0;
+            z-index: 10;
+        }
+        .menu-content a {
+            display: block;
+            color: #0f0;
+            padding: 10px;
+            text-decoration: none;
+            border-bottom: 1px solid #0f0;
+        }
+        .menu-content a:last-child {
+            border-bottom: none;
+        }
+        .menu-content a:hover {
+            background: #0f0;
+            color: #000;
+        }
+        footer {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #0f0;
+            text-align: center;
+            padding: 1rem 0;
+            border-top: 2px solid #0f0;
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu-content');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Gallery</h1>
+    </header>
+    <div class="menu">
+        <button onclick="toggleMenu()">☰ Menu</button>
+        <div class="menu-content">
+            <a href="main.html">Home</a>
+            <a href="experience.html">Experience</a>
+            <a href="family.html">Family</a>
+            <a href="biodata.html">Biodata</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+    </div>
+    <div class="gallery-container">
+        <div class="carousel">
+            <div class="carousel-track">
+                <div class="carousel-item"><img src="image/image1.jpg" alt="Placeholder 1"></div>
+                <div class="carousel-item"><img src="image/image2.jpg" alt="Placeholder 2"></div>
+                <div class="carousel-item"><img src="image/image3.jpg" alt="Placeholder 3"></div>
+                <div class="carousel-item"><img src="image/image4.jpg" alt="Placeholder 4"></div>
+                <div class="carousel-item"><img src="image/image5.jpg" alt="Placeholder 5"></div>
+                <div class="carousel-item"><img src="image/image6.jpg" alt="Placeholder 6"></div>
+                <div class="carousel-item"><img src="image/image7.jpg" alt="Placeholder 7"></div>
+                <div class="carousel-item"><img src="image/image8.jpg" alt="Placeholder 8"></div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        &copy; 2024 Za Atizi Bin Mohd Zainuddin | All Rights Reserved
+    </footer>
+</body>
+</html>

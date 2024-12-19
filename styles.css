@@ -1,0 +1,194 @@
+/* Updated Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: rgb(19,51,9);
+    background: radial-gradient(circle, rgba(19,51,9,1) 0%, rgba(0,0,0,1) 75%);
+    height: 100vh;
+    color: white;
+    overflow: hidden; /* Prevent scrollbars */
+}
+
+/* Main Container */
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+/* Full-Screen Background - screen.png */
+.full-screen-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1; /* Behind all other elements */
+    opacity: 0.6; /* Slight transparency for the background */
+}
+
+/* Left Content - Circle and Symbol */
+.content {
+    width: 50%;
+    height: 100%;
+    position: relative; /* For stacking circle and symbol */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle {
+    position: absolute;
+    top: 50%; /* Center the circle vertically */
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%; /* Large circle spans the container */
+    height: 100%;
+    object-fit: cover;
+    z-index: 2; /* Above screen.png */
+}
+
+.symbol {
+    position: absolute;
+    top: 10vh; /* Maintain relative position from the top of the viewport */
+    left: 13vw; /* Maintain relative position from the left of the viewport */
+    width: 15vw; /* Adjust size based on viewport width */
+    height: auto; /* Maintain aspect ratio */
+    z-index: 3; /* Above the circle */
+}
+
+.symbol2 {
+    position: absolute;
+    top: calc(10vh + 200px); /* Adjust the value to place it below symbol.png */
+    left: 5vw; /* Align it with the symbol.png */
+    width: 35vw; /* Same width as symbol.png for consistency */
+    height: auto;
+    z-index: 3; /* Above the circle */
+}
+
+/* Right Content - izzi.png */
+.image-container {
+    width: 50%;
+    height: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.foreground-image { /* izzi.png */
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 3; /* On top of everything */
+}
+
+/* Button Container Styling */
+.button-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 10; /* Always on top */
+}
+
+.button-image {
+    width: 120px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.button-image:hover {
+    transform: scale(1.1);
+}
+
+/* Clock and Date Styling */
+.clock-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    color: #00ff48;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px 20px;
+    border: 2px solid #00ff48;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #00ff48, 0 0 20px #00ff48;
+    z-index: 10;
+    animation: glow-pulse 1.5s infinite alternate;
+}
+
+#clock {
+    font-size: 28px;
+    font-weight: bold;
+    text-shadow: 0 0 10px #00ff48, 0 0 20px #00ff48;
+}
+
+#date {
+    font-size: 16px;
+    margin-top: 5px;
+    text-shadow: 0 0 5px #00ff8c;
+}
+
+@keyframes glow-pulse {
+    from {
+        box-shadow: 0 0 10px #00ff8c, 0 0 20px #00ff8c;
+    }
+    to {
+        box-shadow: 0 0 15px #00ff8c, 0 0 30px #00ff8c;
+    }
+}
+
+/* Bottom Left Buttons Styling */
+.bottom-left-buttons {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically *
+    gap: 10px; /* Space between buttons */
+    z-index: 10; /* Ensure it's on top */
+}
+
+.bottom-left-buttons img {
+    width: 120px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Hover effect */
+}
+
+.bottom-left-buttons img:hover {
+    transform: scale(1.1);
+}
+
+/* Top Corner Buttons Styling */
+.top-corner-buttons {
+    position: fixed;
+    top: 20px; /* Distance from the top */
+    left: 20px; /* Distance from the left */
+    display: flex;
+    gap: 15px; /* Space between the icons */
+    z-index: 15; /* Ensure it stays on top */
+}
+
+.social-icon {
+    width: 50px; /* Adjust size of the icons */
+    height: 50px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.8));
+}

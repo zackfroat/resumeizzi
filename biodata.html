@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biodata of Za Atizi Bin Mohd Zainuddin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('image/2833951.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #0f0;
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #0f0;
+            text-align: center;
+            padding: 1rem 0;
+            border-bottom: 2px solid #0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px #0f0;
+            border: 2px solid #0f0;
+        }
+        h2 {
+            color: #0f0;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            background: rgba(0, 0, 0, 0.8);
+            margin: 8px 0;
+            padding: 10px;
+            border: 1px solid #0f0;
+            border-radius: 5px;
+        }
+        .menu {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        .menu button {
+            background: rgba(0, 0, 0, 0.8);
+            color: #0f0;
+            border: 2px solid #0f0;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .menu-content {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #0f0;
+            border-radius: 8px;
+            box-shadow: 0 0 15px #0f0;
+            z-index: 10;
+        }
+        .menu-content a {
+            display: block;
+            color: #0f0;
+            padding: 10px;
+            text-decoration: none;
+            border-bottom: 1px solid #0f0;
+        }
+        .menu-content a:last-child {
+            border-bottom: none;
+        }
+        .menu-content a:hover {
+            background: #0f0;
+            color: #000;
+        }
+        footer {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #0f0;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 20px;
+            border-top: 2px solid #0f0;
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.menu-content');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Biodata</h1>
+    </header>
+    <div class="menu">
+        <button onclick="toggleMenu()">☰ Menu</button>
+        <div class="menu-content">
+            <a href="main.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="experience.html">Experience</a>
+            <a href="family.html">Family</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+    </div>
+    <div class="container">
+        <h2>Personal Information</h2>
+        <ul>
+            <li><strong>Name:</strong> Za Atizi Bin Mohd Zainuddin</li>
+            <li><strong>Age:</strong> 20</li>
+            <li><strong>Birthday:</strong> 12th March 2004</li>
+            <li><strong>Birth Place:</strong> Kuantan, Pahang</li>
+            <li><strong>Current Status:</strong> Continuing Studies (DIPLOMA)</li>
+            <li><strong>Phone Number:</strong> +6011-6398 6949 </li>
+
+
+        </ul>
+        <h2>Hobbies</h2>
+        <ul>
+            <li>Archery</li>
+            <li>Coding</li>
+            <li>Gaming</li>
+        </ul>
+        <h2>Favourite Food</h2>
+        <ul>
+            <li>Ikan Patin Masak Tempoyak</li>
+            <li>Ikan Keli </li>
+        </ul>
+        <h2>Favourite Colour</h2>
+        <ul>
+            <li>black</li>
+            <li>gold </li>
+            <li>yellow</li>
+            <li>green</li>
+        </ul>
+        <h2>Coding Skills:</h2>
+        <ul>
+            <li>c++</li>
+            <li>javascript </li>
+            <li>java</li>
+            <li>phython</li>
+            <li>html</li>
+            <li>php</li>
+            <li>mysql</li>
+            <li>c#</li>
+        </ul>
+
+        <h2>Favourite Song</h2>
+        <div>
+            <p>Listen to my favorite song:</p>
+            <audio controls>
+                <source src="audio/wowonwong.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+    <footer>
+        &copy; 2024 Za Atizi Bin Mohd Zainuddin | All Rights Reserved
+    </footer>
+</body>
+</html>

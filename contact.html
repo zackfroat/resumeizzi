@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            background: linear-gradient(to bottom, #000428, #004e92);
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        header {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #0f0;
+            text-align: center;
+            padding: 1rem 0;
+            border-bottom: 2px solid #0f0;
+        }
+
+        .starry-night {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #fff;
+            border-radius: 50%;
+            animation: twinkle 2s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .contact-container {
+            position: relative;
+            z-index: 1;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px green;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .contact-container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #32CD32;
+            font-size: 24px;
+        }
+
+        .contact-form label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #32CD32;
+            border-radius: 5px;
+            background-color: rgba(0, 0, 0, 0.9);
+            color: #fff;
+        }
+
+        .contact-form button {
+            background-color: #32CD32;
+            color: #000;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .contact-form button:hover {
+            background-color: #28a745;
+        }
+
+        .menu {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 2;
+        }
+
+        .menu button {
+            background: rgba(0, 0, 0, 0.8);
+            color: #0f0;
+            border: 2px solid #0f0;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .menu-content {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #0f0;
+            border-radius: 8px;
+            box-shadow: 0 0 15px #0f0;
+            z-index: 10;
+        }
+
+        .menu-content a {
+            display: block;
+            color: #0f0;
+            padding: 10px;
+            text-decoration: none;
+            border-bottom: 1px solid #0f0;
+        }
+
+        .menu-content a:last-child {
+            border-bottom: none;
+        }
+
+        .menu-content a:hover {
+            background: #0f0;
+            color: #000;
+        }
+
+        footer {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #0f0;
+            text-align: center;
+            padding: 1rem 0;
+            border-top: 2px solid #0f0;
+        }
+    </style>
+    <script>
+        // Toggle the menu dropdown
+        function toggleMenu(event) {
+            event.stopPropagation(); // Prevent document click event
+            const menu = document.querySelector('.menu-content');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Close the menu when clicking outside of it
+        document.addEventListener('click', (event) => {
+            const menu = document.querySelector('.menu-content');
+            const button = document.querySelector('.menu button');
+            if (menu && button && !menu.contains(event.target) && event.target !== button) {
+                menu.style.display = 'none';
+            }
+        });
+
+        // Create stars for the starry background
+        document.addEventListener('DOMContentLoaded', () => {
+            const starryNight = document.querySelector('.starry-night');
+            for (let i = 0; i < 100; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                star.style.top = `${Math.random() * 100}%`;
+                star.style.left = `${Math.random() * 100}%`;
+                starryNight.appendChild(star);
+            }
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Contact Us</h1>
+    </header>
+
+    <!-- Menu Section -->
+    <div class="menu">
+        <button onclick="toggleMenu(event)">☰ Menu</button>
+        <div class="menu-content">
+            <a href="main.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="family.html">Family</a>
+            <a href="biodata.html">Biodata</a>
+            <a href="experience.html">Experience</a>
+        </div>
+    </div>
+
+    <!-- Starry Night Background -->
+    <div class="starry-night"></div>
+
+    <!-- Contact Form -->
+    <div class="contact-container">
+        <h1>Contact Us</h1>
+        <form class="contact-form" action="https://wa.link/jcgjyn" method="get" target="_blank">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="text" rows="4" placeholder="Enter your message" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <footer>
+        &copy; 2024 Za Atizi Bin Mohd Zainuddin | All Rights Reserved
+    </footer>
+</body>
+</html>

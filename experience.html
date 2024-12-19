@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #000428, #004e92);
+            color: #ffffff;
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #0f0;
+            text-align: center;
+            padding: 1rem 0;
+            border-bottom: 2px solid #0f0;
+        }
+        header a {
+            color: #00ff00;
+            text-decoration: none;
+            margin-right: 15px;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        header a:hover {
+            color: #ffffff;
+        }
+        .container {
+            margin: 80px auto;
+            max-width: 800px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section h2 {
+            border-bottom: 2px solid #00ff00;
+            padding-bottom: 5px;
+        }
+        .timeline {
+            list-style: none;
+            padding: 0;
+        }
+        .timeline li {
+            margin: 10px 0;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid #00ff00;
+            border-radius: 8px;
+        }
+        .timeline li span {
+            font-weight: bold;
+            color: #00ff00;
+        }
+        .menu {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        .menu button {
+            background: rgba(0, 0, 0, 0.8);
+            color: #0f0;
+            border: 2px solid #0f0;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .menu-content {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            border: 2px solid #0f0;
+            border-radius: 8px;
+            box-shadow: 0 0 15px #0f0;
+            z-index: 10;
+        }
+        .menu-content a {
+            display: block;
+            color: #0f0;
+            padding: 10px;
+            text-decoration: none;
+            border-bottom: 1px solid #0f0;
+        }
+        .menu-content a:last-child {
+            border-bottom: none;
+        }
+        .menu-content a:hover {
+            background: #0f0;
+            color: #000;
+        }
+        footer {
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #0f0;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 20px;
+            border-top: 2px solid #0f0;
+        }
+    </style>
+        <script>
+            function toggleMenu() {
+                const menu = document.querySelector('.menu-content');
+                menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+            }
+        </script>
+</head>
+<body>
+    <header>
+        <h1>Experience</h1>
+    </header>
+    <div class="menu">
+        <button onclick="toggleMenu()">☰ Menu</button>
+        <div class="menu-content">
+            <a href="main.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="family.html">Family</a>
+            <a href="biodata.html">Biodata</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="section">
+            <h2>Schooling Experience</h2>
+            <ul class="timeline">
+                <li><span>Primary (2011 - 2013):</span> SK Cenderawasih</li>
+                <li><span>Primary (2024 - 2026):</span> SMK Seri Pekan, Sekolah Indera Shahbandar Pahang (SISP)</li>
+                <li><span>Secondary (2017 - 2022):</span> SM Sains Sultan Haji Ahmad Shah (SEMSAS)</li>
+                <li><span>Diploma (2022 - Now):</span> Universiti Teknologi Mara Kampus Machang Cawangan Kelantan</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Working Experience</h2>
+            <ul class="timeline">
+                <li><span>Self Business (2011 - 2021):</span> Lemang</li>
+                <li><span>7eleven Staff (2021 - 2022):</span></li>
+                <li><span>Canteen Staff (2022 - 2022):</span></li>
+                <li><span>Internship Archive (2024 - 2024):</span></li>
+                <li><span>Burger F&amp;B (2024 - Now):</span></li>
+            </ul>
+
+            <div class="section">
+                <h2>Video Experience</h2>
+                <p>Check out my latest experiences in the video below:</p>
+                <div style="text-align: center; margin: 20px 0;">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/DBS6Q6cuYeU?si=WeoLQcj_8VdqA6pS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        &copy; 2024 Za Atizi Bin Mohd Zainuddin | All Rights Reserved
+    </footer>
+</body>
+</html>
